@@ -43,7 +43,15 @@
 			<DataPath>Объект.ПереченьНоменклатуры</DataPath>
 			<RowFilter xsi:nil="true"/>
 			<ContextMenu name="ПереченьНоменклатурыКонтекстноеМеню" id="17"/>
-			<AutoCommandBar name="ПереченьНоменклатурыКоманднаяПанель" id="18"/>
+			<AutoCommandBar name="ПереченьНоменклатурыКоманднаяПанель" id="18">
+				<ChildItems>
+					<Button name="ПереченьНоменклатурыПодбор" id="100">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.Подбор</CommandName>
+						<ExtendedTooltip name="ПереченьНоменклатурыПодборРасширеннаяПодсказка" id="101"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
 			<ExtendedTooltip name="ПереченьНоменклатурыРасширеннаяПодсказка" id="19"/>
 			<SearchStringAddition name="ПереченьНоменклатурыСтрокаПоиска" id="20">
 				<AdditionSource>
@@ -69,6 +77,9 @@
 				<ContextMenu name="ПереченьНоменклатурыУправлениеПоискомКонтекстноеМеню" id="27"/>
 				<ExtendedTooltip name="ПереченьНоменклатурыУправлениеПоискомРасширеннаяПодсказка" id="28"/>
 			</SearchControlAddition>
+			<Events>
+				<Event name="ChoiceProcessing">ПереченьНоменклатурыОбработкаВыбора</Event>
+			</Events>
 			<ChildItems>
 				<LabelField name="ПереченьНоменклатурыНомерСтроки" id="29">
 					<DataPath>Объект.ПереченьНоменклатуры.LineNumber</DataPath>
@@ -81,6 +92,9 @@
 					<EditMode>EnterOnInput</EditMode>
 					<ContextMenu name="ПереченьНоменклатурыНоменклатураКонтекстноеМеню" id="33"/>
 					<ExtendedTooltip name="ПереченьНоменклатурыНоменклатураРасширеннаяПодсказка" id="34"/>
+					<Events>
+						<Event name="OnChange">ПереченьНоменклатурыНоменклатураПриИзменении</Event>
+					</Events>
 				</InputField>
 				<InputField name="ПереченьНоменклатурыКоличество" id="35">
 					<DataPath>Объект.ПереченьНоменклатуры.Количество</DataPath>
@@ -121,4 +135,21 @@
 			</UseAlways>
 		</Attribute>
 	</Attributes>
+	<Commands>
+		<Command name="Подбор" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подбор</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подобрать номенклатуру из справочника (можно выделить несколько строк)</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Подбор</Action>
+		</Command>
+	</Commands>
 </Form>

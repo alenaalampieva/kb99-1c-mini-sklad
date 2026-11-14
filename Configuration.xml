@@ -261,6 +261,7 @@
 			<CommonPicture>Материалы</CommonPicture>
 			<CommonPicture>Услуги</CommonPicture>
 			<CommonModule>РаботаСДокументами</CommonModule>
+			<CommonModule>РаботаСоСправочниками</CommonModule>
 			<Catalog>Контрагенты</Catalog>
 			<Catalog>Сотрудники</Catalog>
 			<Catalog>Номенклатура</Catalog>
@@ -270,6 +271,14 @@
 			<Report>ОборотыПоТоварам</Report>
 			<Report>ВыручкаИСебестоимость</Report>
 			<Report>ОстаткиНаДату</Report>
+			<Report>Материалы</Report>
+			<Report>РеестрДокументовРеализация</Report>
+			<Report>РейтингУслуг</Report>
+			<Report>ВыручкаМастеров</Report>
+			<Report>ПереченьУслуг</Report>
+			<Report>РейтингКлиентов</Report>
+			<Report>Универсальный</Report>
+			<InformationRegister>Цены</InformationRegister>
 			<AccumulationRegister>ОстаткиНоменклатуры</AccumulationRegister>
 			<AccumulationRegister>ПартииНоменклатуры</AccumulationRegister>
 			<AccumulationRegister>Продажи</AccumulationRegister>

@@ -31,7 +31,15 @@
 			<DataPath>Объект.Материалы</DataPath>
 			<RowFilter xsi:nil="true"/>
 			<ContextMenu name="МатериалыКонтекстноеМеню" id="11"/>
-			<AutoCommandBar name="МатериалыКоманднаяПанель" id="12"/>
+			<AutoCommandBar name="МатериалыКоманднаяПанель" id="12">
+				<ChildItems>
+					<Button name="МатериалыПодбор" id="100">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.Подбор</CommandName>
+						<ExtendedTooltip name="МатериалыПодборРасширеннаяПодсказка" id="101"/>
+					</Button>
+				</ChildItems>
+			</AutoCommandBar>
 			<ExtendedTooltip name="МатериалыРасширеннаяПодсказка" id="13"/>
 			<SearchStringAddition name="МатериалыСтрокаПоиска" id="14">
 				<AdditionSource>
@@ -57,6 +65,9 @@
 				<ContextMenu name="МатериалыУправлениеПоискомКонтекстноеМеню" id="21"/>
 				<ExtendedTooltip name="МатериалыУправлениеПоискомРасширеннаяПодсказка" id="22"/>
 			</SearchControlAddition>
+			<Events>
+				<Event name="ChoiceProcessing">МатериалыОбработкаВыбора</Event>
+			</Events>
 			<ChildItems>
 				<LabelField name="МатериалыНомерСтроки" id="23">
 					<DataPath>Объект.Материалы.LineNumber</DataPath>
@@ -109,4 +120,21 @@
 			</UseAlways>
 		</Attribute>
 	</Attributes>
+	<Commands>
+		<Command name="Подбор" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подбор</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Подобрать номенклатуру из справочника (можно выделить несколько строк)</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>Подбор</Action>
+		</Command>
+	</Commands>
 </Form>
