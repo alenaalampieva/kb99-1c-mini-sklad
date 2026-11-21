@@ -260,8 +260,14 @@
 			<CommonPicture>Зарплата</CommonPicture>
 			<CommonPicture>Материалы</CommonPicture>
 			<CommonPicture>Услуги</CommonPicture>
+			<Role>Администратор</Role>
+			<Role>Кладовщик</Role>
+			<Role>Менеджер</Role>
+			<Role>Бухгалтер</Role>
 			<CommonModule>РаботаСДокументами</CommonModule>
 			<CommonModule>РаботаСоСправочниками</CommonModule>
+			<CommonModule>РегламентныеЗаданияСервер</CommonModule>
+			<ScheduledJob>КонтрольОстатков</ScheduledJob>
 			<Catalog>Контрагенты</Catalog>
 			<Catalog>Сотрудники</Catalog>
 			<Catalog>Номенклатура</Catalog>
