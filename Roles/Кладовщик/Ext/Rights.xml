@@ -4,6 +4,13 @@
 	<setForAttributesByDefault>true</setForAttributesByDefault>
 	<independentRightsOfChildObjects>false</independentRightsOfChildObjects>
 	<object>
+		<name>SessionParameter.ТекущийСклад</name>
+		<right>
+			<name>Get</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>Catalog.Контрагенты</name>
 		<right>
 			<name>Read</name>
@@ -19,14 +26,23 @@
 		<right>
 			<name>Read</name>
 			<value>true</value>
+			<restrictionByCondition>
+				<condition>#ПоСкладу("Склад")</condition>
+			</restrictionByCondition>
 		</right>
 		<right>
 			<name>Insert</name>
 			<value>true</value>
+			<restrictionByCondition>
+				<condition>#ПоСкладу("Склад")</condition>
+			</restrictionByCondition>
 		</right>
 		<right>
 			<name>Update</name>
 			<value>true</value>
+			<restrictionByCondition>
+				<condition>#ПоСкладу("Склад")</condition>
+			</restrictionByCondition>
 		</right>
 		<right>
 			<name>Posting</name>
@@ -203,4 +219,10 @@
 			<value>true</value>
 		</right>
 	</object>
+	<restrictionTemplate>
+		<name>ПоСкладу(ИмяПоля)</name>
+		<condition>// Шаблон RLS: доступны только записи склада текущего пользователя
+// (параметр сеанса ТекущийСклад заполняется в модуле сеанса из регистра СкладыПользователей).
+ГДЕ #Параметр(1) = &amp;ТекущийСклад</condition>
+	</restrictionTemplate>
 </Rights>
